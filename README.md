@@ -42,7 +42,7 @@ Next.js API for scraping manga metadata from multiple sources.
 | Mangaloom          | `mangaloom`          | https://mangaloom.com       | Active   |
 | MangaPark          | `mangapark`          | https://mangapark.io        | Shutdown |
 | MangaRead          | `mangaread`          | https://mangaread.org       | Active   |
-| Mangasushi         | `mangasushi`         | https://mangasushi.org      | Active   |
+| Mangasushi         | `mangasushi`         | https://mangasushi.org      | Unstable |
 | Mangataro          | `mangataro`          | https://mangataro.org       | Active   |
 | MangaYY            | `mangayy`            | https://mangayy.org         | Active   |
 | Manhuaplus         | `manhuaplus`         | https://manhuaplus.top      | Active   |
