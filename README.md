@@ -7,7 +7,7 @@ Next.js API for scraping manga metadata from multiple sources.
 | Source             | ID                   | Base URL                    | Status   |
 | ------------------ | -------------------- | --------------------------- | -------- |
 | Arven Comics       | `arven-comics`       | https://arvencomics.com     | Active   |
-| Arya Scans         | `arya-scans`         | https://brainrotcomics.com  | Active   |
+| Arya Scans         | `arya-scans`         | https://brainrotcomics.com  | Unstable |
 | Asmodeus Scans     | `asmodeus-scans`     | https://asmotoon.com        | Active   |
 | AsuraScan          | `asurascan`          | https://asurascans.com      | Active   |
 | Athrea Scans       | `athrea-scans`       | https://athreascans.com     | Active   |
@@ -19,10 +19,10 @@ Next.js API for scraping manga metadata from multiple sources.
 | Elf Toon           | `elf-toon`           | https://elftoon.com         | Active   |
 | Eva Scans          | `eva-scans`          | https://evascans.org        | Active   |
 | Falcon Scans       | `falcon-scans`       | https://falconscans.com     | Shutdown |
-| Firescans          | `firescans`          | https://firescans.xyz       | Unstable |
+| Firescans          | `firescans`          | https://firescans.xyz       | Active   |
 | FlameComics        | `flamecomics`        | https://flamecomics.xyz     | Active   |
 | Galaxy Degen Scans | `galaxy-degen-scans` | https://gdscans.com         | Active   |
-| Greed Scans        | `greed-scans`        | https://greedscans.com      | Active   |
+| Greed Scans        | `greed-scans`        | https://greedscans.com      | Unstable |
 | Hades Scans        | `hades-scans`        | https://hadesscans.com      | Active   |
 | KaliScan           | `kaliscan`           | https://kaliscan.com        | Active   |
 | KappaBeast         | `kappabeast`         | https://kappabeast.com      | Unstable |
@@ -57,7 +57,7 @@ Next.js API for scraping manga metadata from multiple sources.
 | Raven Scans        | `raven-scans`        | https://ravenscans.org      | Unstable |
 | RD Scans           | `rd-scans`           | https://rdscans.com         | Active   |
 | Ritharscans        | `ritharscans`        | https://ritharscans.com     | Active   |
-| Rizz Fables        | `rizz-fables`        | https://rizzfables.com      | Unstable |
+| Rizz Fables        | `rizz-fables`        | https://rizzfables.com      | Active   |
 | Rokari Comics      | `rokari-comics`      | https://rokaricomics.com    | Active   |
 | Scythe Scans       | `scythe-scans`       | https://scythescans.com     | Active   |
 | Spider Scans       | `spider-scans`       | https://spiderscans.xyz     | Unstable |
