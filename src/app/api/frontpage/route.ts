@@ -5,7 +5,7 @@ import {
   getFrontpageSourceIds,
 } from "@/lib/frontpages";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 // i'm not entirely sure that this feature is needed, 
 // but i'll add it for now due to the request from a user
