@@ -1,3 +1,4 @@
+import * as cheerio from "cheerio";
 import { ScrapedChapter, SearchResult, SourceType } from "@/types";
 interface ScraperConfig {
   retryAttempts: number;
@@ -21,7 +22,51 @@ export abstract class BaseScraper {
   abstract extractMangaInfo(url: string): Promise<{ title: string; id: string }>;
   abstract getChapterList(mangaUrl: string): Promise<ScrapedChapter[]>;
   abstract search(query: string): Promise<SearchResult[]>;
-  abstract getChapterPages(chapterUrl: string): Promise<string[]>;
+  async getChapterPages(chapterUrl: string): Promise<string[]> {
+    const html = await this.fetchWithRetry(chapterUrl);
+    const $ = cheerio.load(html);
+    const pages: string[] = [];
+    const seenPages = new Set<string>();
+
+    const addPage = (src?: string) => {
+      if (!src) return;
+
+      const cleanSrc = src.trim();
+      if (
+        !cleanSrc ||
+        cleanSrc.startsWith("data:") ||
+        seenPages.has(cleanSrc)
+      ) {
+        return;
+      }
+
+      seenPages.add(cleanSrc);
+      pages.push(cleanSrc.startsWith("//") ? `https:${cleanSrc}` : cleanSrc);
+    };
+
+    $(
+      [
+        ".reading-content img",
+        ".page-break img",
+        ".wp-manga-chapter-img",
+        "#readerarea img",
+        ".chapter-content img",
+        ".chapter-reader img",
+        ".entry-content img",
+        "article img",
+      ].join(", "),
+    ).each((_, element) => {
+      const $image = $(element);
+      addPage(
+        $image.attr("data-src") ||
+          $image.attr("data-lazy-src") ||
+          $image.attr("data-original") ||
+          $image.attr("src"),
+      );
+    });
+
+    return pages;
+  }
   protected async fetchWithRetry(url: string, retries = this.config.retryAttempts): Promise<string> {
     for (let i = 0; i <= retries; i++) {
       try {
